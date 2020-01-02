@@ -1,0 +1,11 @@
+package com.revature.eval.java.core;
+
+public class armstrong {
+public static void main(String[] args) {
+	String number = String.valueOf(input);
+	int[] num = new int[number.length()]; 
+	for (int i = 0; i < num.length; i++) {
+		num[i] = number.charAt(i)- '0';
+	}
+}
+}

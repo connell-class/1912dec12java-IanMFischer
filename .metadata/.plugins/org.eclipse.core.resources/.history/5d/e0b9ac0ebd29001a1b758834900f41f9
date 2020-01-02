@@ -1,0 +1,11 @@
+package com.day3.poly;
+
+import java.io.IOException;
+import java.sql.SQLException;
+
+public class ChildPoly extends ParentPoly{
+
+	public String method1() {
+		return "mfoiofgiueh";
+	}
+}

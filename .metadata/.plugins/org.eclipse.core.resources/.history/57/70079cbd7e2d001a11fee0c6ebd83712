@@ -1,0 +1,53 @@
+package com.example.numbers;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.mockito.Mockito;
+
+public class CalculatorTest {
+
+	static Calculator cal;
+	//this 
+	ConstantValues cv = Mockito.mock(ConstantValues.class);
+	
+	@BeforeClass
+	public static void beforeAll() {
+		cal = new Calculator();
+		System.out.println("===============before all===============");
+	}
+
+	@AfterClass
+	public static void afterAll() {
+		System.out.println("===============after all===============");
+	}
+
+	@Before
+	public void beforeTest() {
+		System.out.println("===============before test===============");
+	}
+
+	@After
+	public void afterTest() {
+		System.out.println("===============before test===============");
+	}
+
+	@Test
+	public void testAddition() {
+//		cal.sum(40, 50);
+		assertEquals(90, cal.sum(40,50));
+	}
+	@Test
+	public void  testDivide() {
+		assertEquals(10, cal.divide(100, 10));
+	}
+@Test
+public void testConversion() {
+	Mockito.when(cv.getMile()).thenReturn(5280).
+	assertEquals(5280.0, cal.convertMileToFeet(1),0);
+}
+}

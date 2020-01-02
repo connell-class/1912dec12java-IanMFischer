@@ -1,0 +1,16 @@
+package com.revature.eval.java.core;
+
+public class armstrong {
+	static int input = 153;
+	public static void main(String[] args) {
+		String number = String.valueOf(input);
+		int[] num = new int[number.length()]; 
+		for (int i = 0; i < num.length; i++) {
+			num[i] = number.charAt(i)- '0';
+		}
+		for (int i : num) {
+			num[i]=(int) Math.pow(i, 3);
+			System.out.println(i);
+		}
+	}
+}

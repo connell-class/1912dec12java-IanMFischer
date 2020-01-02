@@ -1,0 +1,38 @@
+package com.day4.abstractthoughts;
+import java.io.Serializable;
+public class ConcreteExample extends AbstractClassExample implements Paintable() 
+
+@Override
+public void print() 
+{
+	// TODO Auto-generated method stub
+
+}
+
+
+@Override
+public void paint1() 
+{
+	// TODO Auto-generated method stub
+
+	@Override
+	public void paint2() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void paint3() {
+		// TODO Auto-generated method stub
+
+	}
+
+
+}
+@Override
+public void paint4()
+{
+	System.out.println("this is the fix");
+}
+
+}

@@ -1,0 +1,33 @@
+package com.example.numbers;
+
+public class CalculatorTest {
+	public class CalulatorTest {
+		static Calculator cal;
+
+		@BeforeClass
+		public static void beforeAll() {
+			cal = new Calculator();
+			System.out.println("===============before all===============");
+		}
+
+		@AfterClass
+		public static void afterAll() {
+			System.out.println("===============after all===============");
+		}
+
+		@Before
+		public void beforeTest() {
+			System.out.println("===============before test===============");
+		}
+
+		@After
+		public void afterTest() {
+			System.out.println("===============before test===============");
+		}
+
+		@Test
+		public void testAddition() {
+			cal.sum(40, 50);
+		}
+	}
+}

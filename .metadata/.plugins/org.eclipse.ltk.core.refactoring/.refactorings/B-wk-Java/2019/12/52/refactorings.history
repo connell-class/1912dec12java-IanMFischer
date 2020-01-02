@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.exceptions.MyCustomEception.java&apos; to &apos;MyCustomException.java&apos;&#x0D;&#x0A;- Original project: &apos;B-wk-Java&apos;&#x0D;&#x0A;- Original element: &apos;com.exceptions.MyCustomEception.java&apos;&#x0D;&#x0A;- Renamed element: &apos;com.exceptions.MyCustomException.java&apos;" description="Rename compilation unit &apos;MyCustomEception.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;com.exceptions{MyCustomEception.java" name="MyCustomException.java" references="false" stamp="1577396479932" version="1.0"/>
+</session>

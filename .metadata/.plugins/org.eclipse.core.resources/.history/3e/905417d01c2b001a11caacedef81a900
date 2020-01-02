@@ -1,0 +1,33 @@
+package com.day1.review;
+
+public class Primitives {
+	/*
+	 * primitives
+	 * 
+	 * boolean-1bit
+	 * byte - 8 bits
+	 * short -16 bits
+	 * char- 16bits
+	 * int-	32bit
+	 * float-32
+	 * double-64bit
+	 * long-64 bit
+	 * 
+	 * Because Java has primitives it is not 100% Object oriented
+	 * 
+	 * casting - changing the type of a value 
+	 * type casting - converting primitive values from one type to another
+	 * 
+	 * 
+	 * 
+	 */
+public static void main(String[] args) {
+	int x = 90;
+	System.out.println(char(x));
+double d = 8.8;
+System.out.println((int)d); //drops the decimal
+}
+	
+
+
+}

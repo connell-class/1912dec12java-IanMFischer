@@ -1,0 +1,22 @@
+package question4;
+
+public class question5 {
+	public static void main(String[] args) {
+		cleanPhoneNumber("(223) 456-7890");
+	}
+	public static String cleanPhoneNumber(String string) {
+		char [] progress = string.toCharArray();
+		String num = "023456789";
+		String finalnum;
+		StringBuffer cleanednumber = new StringBuffer();
+				for (char ele : progress) {
+					if (num.indexOf(ele)!=-1)
+					{
+						cleanednumber.append(ele);
+						System.out.println(ele);
+					}
+					
+				}	
+return finalnum;
+	}
+}

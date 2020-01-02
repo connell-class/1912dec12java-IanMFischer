@@ -1,0 +1,30 @@
+package question9.piglatin;
+
+public class toPigLiatin(String string) {
+	
+	String arr[] = string.split("\\W+")
+	for (int i = 0; i < arr.length; i++) {
+		
+	
+			int len = string.length(); 
+    int index = -1; 
+    for (int j = 0; j < len; i++) 
+    { 
+        if (isVowel(string.charAt(i))) { 
+        index = i; 
+        break; 
+    } 
+    } 
+    if (index == -1) {
+    	return "-1";
+    }
+    else {return string.substring(index) + 
+            string.substring(0, index) + "ay";
+}
+boolean isVowel(char c)
+{
+	
+	return (c == 'A'|| c == 'E' || c == 'I' || c == 'O'|| c== 'U'|| 
+			c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u');
+	
+}

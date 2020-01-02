@@ -1,0 +1,57 @@
+package com.day2.arrays;
+
+import java.util.Arrays;
+
+/*
+ * what is an array?
+ * 		a data structure for holidng values
+ *		a series of data entries of the same type being held sequentially in memory
+ * 
+ * 		array sizes are immutable
+ * Naming Conventions
+ * 		ClassName	TitleCase	Noun
+ * 		variable	camelCase	Noun
+ * 		method		camelCase	verb
+ * 		Interface	TitleCase	adjective
+ * 
+ * You can never use reserved keywords for name... and there are a lot of them.
+ * assert, abstract, this, super, implements, exports 
+ * const, goto, extends, continue, strictfp, and lots more
+ */
+public class ArrayExample {
+	public static void main(String[] args) {
+		int [] arr = new int[5]; // 5 defines the size
+		arr[0]=2;
+		//	System.out.println(arr[0]);
+
+		String[] train = new String[7];
+		train [0]="engine";
+		train [6]="caboose";
+		for (int x =1; x<6; x++)
+		{
+			train[x] = "car";
+		}
+		System.out.println(Arrays.toString(train));
+		String[] arr2 = {"me","am", "hungee"};
+		String [] arr3 = {"me","in","space"};
+		String arr4[] = {"whaaaa?","!!!"};
+
+		/*
+		 * default values
+		 * int = 0
+		 * float = 0
+		 * double = 0
+		 * short = 0
+		 * byte = 0 
+		 * boolean = false
+		 * String = null
+		 * Object = null
+		 * 
+		 * When do these variables hold these values?
+		 * When it's static scope, instance scope, or it's in an array.
+		 */
+		ArrayExample e = new ArrayExample();
+		System.out.println(arr[3]);
+
+	}
+}

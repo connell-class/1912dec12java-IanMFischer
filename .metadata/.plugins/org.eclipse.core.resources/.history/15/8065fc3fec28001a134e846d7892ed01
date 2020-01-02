@@ -1,0 +1,16 @@
+package com.example.numbers;
+
+public class Calculator {
+
+	public int sum(int i, int j) {
+		return i+j;
+	}
+public int divide(int a, int b) {
+	if(b == 0 ) {
+		throw new ArithemeticException();
+		
+	}
+	return a/b;
+}
+	
+}

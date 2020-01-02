@@ -1,0 +1,77 @@
+package com.exceptions;
+
+import java.io.IOException;
+import java.io.StringWriter;
+
+/*
+ * Exceptions have a hierarchy
+ * 			Throwable 				checked
+ * 		|				|
+ * Exception checked   Error Unchecked
+ * 		|
+ * Runtime Exception Unchecked
+ * 
+ * printStackTrace() is available to provivde a trace from the stack off where the exception happened.
+ * Runtime exceptions do not have to be handled.
+ * 
+ * Exceptions: either handle it myself or duck responsibility
+ * 
+ * Checked throwables must be handled
+ * we can handle the responsibility with a try catch block, or we can duckt it with  a  throws
+ * declaration.
+ */
+public class ExceptionDriver {
+	public static void main(String[] args) {
+		//	ArrayIndexOutOfBoundsException ai = new ArrayIndexOutOfBoundsException();
+		////	ai.printStackTrace();
+		//throw ai; //if there's nothing there the JVM will handle it]]
+		try {
+			thrower();
+			catch(NullPointerException n) {
+				System.out.println("hello catchers");
+			}
+			System.out.println("after the thing");
+
+		}
+		public static void thrower() throws Exception{
+			throw new Exception();
+
+		}
+
+		static void voice() {
+			System.out.println("voice");
+			
+		}
+		static void hoarse() {
+			System.out.println("horse is hoarse");
+			saddle(); 
+		}
+		static void saddle() throws MyCustomException{
+			System.out.println("riding that same hoarse horse");
+			guessWat();
+		}
+	static void guessWat() throws MyCustomException {
+		throw new MyCustomException ("this is the life yo");
+		
+	}
+	static void multipleCatch() {
+		try {
+				throw new MyCustomExcepction();
+				
+		} catch(Throwable t) {
+			System.out.println("Throwable");
+		} catch(Exception e) {
+			System.out.println("exception");
+			catch (MyCustomException m) {
+				
+			}
+		}
+	}
+	}
+static void tryWithResources() throws IOException {
+	StringWriter s = new StringWriter();
+//	try {
+//		s.append('d');
+//	}
+
+}

@@ -1,0 +1,38 @@
+package com.day2.access;
+
+public class LightBulb {
+	LightBulb(int elements, String brand, boolean cool, double watts){
+		this.elements = elements;
+		this.brand = brand;
+		this.cool=cool;
+		this.setWatts(watts);
+	/*
+	 * Access Modifiers
+	 * 				own class	package		children	everywhere else
+	 * public		yes			yes			yes			yes
+	 * protected	yes			yes			yes			no
+	 * default		yes			yes			no			no
+	 * private		yes			no			no			no
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 */
+	public int elements;
+	protected String brand;
+	boolean cool;
+	private double watts;
+	
+	
+}
+
+	public double getWatts() {
+		return watts;
+	}
+
+	public void setWatts(double watts) {
+		this.watts = watts;
+	}
+}

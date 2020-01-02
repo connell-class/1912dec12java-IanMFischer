@@ -1,0 +1,53 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.example</groupId>
+	<artifactId>MavenIntro</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<!-- this is a comment in XML -->
+	<!-- What does POM stand for? Project Object Model What is maven? it is 
+		a project manager. it will manage your: dependencies class files compiling 
+		packaging metadata and more... -->
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+
+	<!-- https://mvnrepository.com/artifact/junit/junit -->
+	<dependencies>
+	<!-- Maven will go to the central repo and gather the files needed and install them into your 
+		project . it will also save it in your local repo under the .m2 folder now it does not need
+		to go online to gather the files to be used next time
+		but will instead check the local repo first before going to the central repo.-->
+		
+		
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+	<!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
+<dependency>
+    <groupId>org.mockito</groupId>
+    <artifactId>mockito-core</artifactId>
+    <version>2.23.4</version>
+    <scope>test</scope>
+</dependency>
+	
+	</dependencies>
+
+
+	<!-- Maven Lifecycle 
+	Default (build) 		clean 		site - -->
+	phases 	validate
+			compile
+			
+	
+	
+	
+	
+	
+</project>
+

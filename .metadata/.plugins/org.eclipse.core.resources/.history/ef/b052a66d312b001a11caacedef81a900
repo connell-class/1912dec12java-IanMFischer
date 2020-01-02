@@ -1,0 +1,9 @@
+package com.day1.instationorder;
+
+public class Child {
+//static and instance blocks
+	system.out.println("in the child");
+public static void main(String[] args) {
+	Child child = new Child();
+}
+}

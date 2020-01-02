@@ -1,0 +1,44 @@
+package com.day2.oop;
+
+public class OOPnotes {
+	/*
+	 * OOP Object Oriented Programming
+	 * 
+	 * Pillars of Object Oriented programming 
+	 * A PIE
+	 * 
+	 * Abstraction 
+	 * 		hiding details and implementation
+	 * 		java achieves abstraction with interfaces and abstract classes
+	 * Polymorphism 
+	 * 		the way that behavior can take many forms. ex a dog and a cat are both animals but makesound() provides different results
+	 * 		Java achieves polymorphism with method overloading and overriding
+	 * Inheritance 
+	 * 		a way that parents traits are passed to the child
+	 * Encapsulation
+	 * 		preventing direct access
+	 * 
+	 *vending machine example
+	 *
+	 */
+	//access		  return type, name (parameters) 
+	public static void main(String[] args) {
+		//special methods inside of classes called a constructor
+		//Constructor signature : nameOfClass(parameters){}
+		Parent.paint("Garnet and Gold");
+		Child c = new Child();
+		c.age = 5; //inheritance
+		boolean b = c.spank(); //overriding...polymorphism
+		boolean n = c.spank(4); //overloading ...
+		System.out.println(b);
+		
+		OopNotes lb = new OopNotes(4, "ikea", true, 160.0);
+		System.out.println(lb.elements); //4
+		lb.elements=-400;
+		lb.yellMyStuff();
+
+	}
+	void yellMyStuff() {
+		System.out.println(this.brand);
+	}
+}

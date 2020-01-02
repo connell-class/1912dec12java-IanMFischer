@@ -1,0 +1,13 @@
+package com.day2.oop;
+
+public class Child extends Parent {
+	//method overloading
+	boolean spank()
+	{
+		return false;
+	}
+//method Overloading
+	boolean spank(int num) {
+		return num == 3;
+	}
+}

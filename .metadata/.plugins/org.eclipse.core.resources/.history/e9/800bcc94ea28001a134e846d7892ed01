@@ -1,0 +1,11 @@
+package com.example.numbers;
+
+public class Calculator {
+
+	public void sum(int i, int j) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+}

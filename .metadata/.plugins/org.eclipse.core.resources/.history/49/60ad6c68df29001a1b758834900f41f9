@@ -1,0 +1,19 @@
+package question4;
+
+public class question5 {
+	public String cleanPhoneNumber(String string) {
+		char [] progress = string.toCharArray()
+		String num = "023456789";
+		String finalnum;
+		StringBuffer cleanednumber = new StringBuffer();
+				for (char ele : progress) {
+					if (num.indexOf(ele)!=-1)
+					{
+						cleanednumber.append(ele);
+						System.out.println(ele);
+					}
+					
+				}	
+return finalnum;
+	}
+}

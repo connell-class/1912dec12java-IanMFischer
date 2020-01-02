@@ -1,0 +1,27 @@
+package com.scanning;
+
+import java.util.Scanner;
+
+public class ScannerExample {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("how many would you like?");
+		int selected = scan.nextInt();
+		switch(selected) {
+		case 1; 
+		System.out.println("you wanted one?? how dare you");
+		break;
+		case 2:
+			System.out.println("two coming right up");
+			break;
+		case 3:
+			System.out.println("you are so greedy");
+			break;
+			default: 
+				System.out.println("does not compute");
+			break;
+		}
+	scan.close();
+	}
+
+}

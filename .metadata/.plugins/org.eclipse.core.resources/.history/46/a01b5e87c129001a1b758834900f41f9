@@ -1,0 +1,14 @@
+package com.exceptions;
+/* 
+ * We can create custom exceptions and Errors by extending the classes. We can extend Throwable and exception to create
+ * a custom checked exceptin or exteded RuntimeException to create an unchecked exception.
+ */
+public class MyCustomException  extends Exception{
+Public MyCustomException() {
+	super("custom exception");
+	
+}
+public MycustomException(String message) {
+	super("our custom message is : "+message;)
+}
+}
