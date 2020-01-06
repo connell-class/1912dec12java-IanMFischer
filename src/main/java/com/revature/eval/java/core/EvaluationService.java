@@ -1,8 +1,16 @@
 package com.revature.eval.java.core;
 
+import static org.junit.Assert.assertEquals;
+
 import java.time.temporal.Temporal;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.regex.Pattern;
 
 public class EvaluationService {
 
@@ -22,6 +30,7 @@ public class EvaluationService {
 	}
 
 	/**
+	 * Question 2
 	 * 2. Convert a phrase to its acronym. Techies love their TLA (Three Letter
 	 * Acronyms)! Help generate some jargon by writing a program that converts a
 	 * long name like Portable Network Graphics to its acronym (PNG).
@@ -30,8 +39,30 @@ public class EvaluationService {
 	 * @return
 	 */
 	public String acronym(String phrase) {
-		// TODO Write an implementation for this method declaration
-		return null;
+		char[] charArray = phrase.toCharArray(); //take in the String phrase change it to a char array and store it in the char Array named charArray 
+
+		ArrayList<String> abreviation = new ArrayList<String>(); //make a new object Array list named abreviation of type String
+
+		String string1 = Character.toString(charArray[0]); //takes the value of the zeroth index of the char array and stores it in string1
+		abreviation.add(string1); //this adds the vaule of string1 to the Arraylist Abbreviation
+
+		for (int i = 1; i < charArray.length; i++) {  //sets up the for loop to travers the char array to check for other initials
+			if (charArray[i] == ' ' || charArray[i] == '-') { //if the value of the current index is a space character, or a hyphen/dash character...
+
+				String string2 = Character.toString(charArray[i + 1]);   //take the character after the space or the dash/hyphen and add it to the abbreviation array list
+				abreviation.add(string2);
+			} //end the if statement
+		}//loop until the end of the char Array
+
+
+		StringBuffer buffer = new StringBuffer(); //create a string buffer named buffer
+		for (String str : abreviation) {
+			buffer.append(str);
+		}
+
+		String result = buffer.toString();
+		String result1 = result.toUpperCase();
+		return result1; 
 	}
 
 	/**
@@ -84,18 +115,25 @@ public class EvaluationService {
 		}
 
 		public boolean isEquilateral() {
-			// TODO Write an implementation for this method declaration
-			return false;
+			if (sideOne == sideTwo && sideOne==sideThree && sideTwo==sideThree)
+			{
+				return true;
+			}
+			else {return false;}
 		}
 
 		public boolean isIsosceles() {
-			// TODO Write an implementation for this method declaration
-			return false;
+			if (sideOne == sideTwo || sideOne==sideThree||sideTwo == sideThree)
+			{
+				return true;
+			}
+			else {return false;}
 		}
 
 		public boolean isScalene() {
-			// TODO Write an implementation for this method declaration
-			return false;
+			if (sideOne != sideTwo && sideOne != sideThree && sideThree !=sideTwo )
+				return true;
+			else return false;
 		}
 
 	}
@@ -116,8 +154,64 @@ public class EvaluationService {
 	 * @return
 	 */
 	public int getScrabbleScore(String string) {
-		// TODO Write an implementation for this method declaration
-		return 0;
+		string=string.toLowerCase();
+		int score =0;
+		char[] charArray = string.toCharArray();
+		for (int i = 0; i < charArray.length; i++) {
+			if (charArray[i]== 'a' || 
+					charArray[i]== 'e' || 
+					charArray[i]== 'i' || 
+					charArray[i]== 'o' || 
+					charArray[i]== 'u' || 
+					charArray[i]== 'l' || 
+					charArray[i]== 'n' || 
+					charArray[i]== 'r' || 
+					charArray[i]== 's' || 
+					charArray[i]== 't')
+			{	
+				score++;
+				System.out.println(score);
+			}
+			else if (charArray[i]== 'd' || charArray[i]== 'g') 
+			{
+				score = score + 2;
+				System.out.println(score);
+			}
+			else if (charArray[i]== 'b' ||
+					charArray[i]== 'c' ||
+					charArray[i]== 'm' ||
+					charArray[i]== 'p')
+			{
+				score = score +3;
+				System.out.println(score);
+			}
+			else if (charArray[i]== 'f' ||
+					charArray[i]== 'h' ||
+					charArray[i]== 'v' ||
+					charArray[i]== 'w' ||
+					charArray[i]== 'y')
+			{
+				score = score + 4;
+				System.out.println(score);
+			}
+			else if (charArray[i]== 'k')
+			{ 
+				score = score + 5;
+				System.out.println(score);
+			}
+			else if (charArray[i]== 'j' || charArray[i]== 'x')
+			{
+				score = score + 8;
+				System.out.println(score);
+			}
+			else if (charArray[i]== 'q' ||charArray[i]== 'z')
+			{
+				score = score + 10;
+				System.out.println(score);
+			}
+			else return 0;
+		}
+		return score;
 	}
 
 	/**
@@ -144,17 +238,44 @@ public class EvaluationService {
 	 * For example, the inputs
 	 * 
 	 * +1 (613)-995-0253 613-995-0253 1 613 995 0253 613.995.0253 should all produce
-	 * the output
+	 * the output  //characters to remove + 1 space ( ) - .  
 	 * 
 	 * 6139950253
 	 * 
 	 * Note: As this exercise only deals with telephone numbers used in
 	 * NANP-countries, only 1 is considered a valid country code.
 	 */
-	public String cleanPhoneNumber(String string) {
-		// TODO Write an implementation for this method declaration
-		return null;
+	public String cleanPhoneNumber(String string) 
+	{
+		String theRegex ="\\D";
+		Pattern checkRegex = Pattern.compile(theRegex);
+		//Matcher regexmatcher = checkRegex.matcher(string);
+
+		//		if (Pattern.matches(theRegex, string))
+		//		{
+		//			throw new IllegalArgumentException("contains illegal characters");
+		//		}
+
+		char [] progress = string.toCharArray();
+		String num = "023456789";
+		String finalnum="";
+		StringBuffer cleanednumber = new StringBuffer();
+		for (char ele : progress) 
+		{
+			if (num.indexOf(ele)!=-1)
+			{
+				cleanednumber.append(ele);
+			}
+
+			if(cleanednumber.length() != 10) {
+				throw new IllegalArgumentException("contains illegal characters");
+			}
+		}
+		finalnum = cleanednumber.toString();				
+		return finalnum;
 	}
+
+
 
 	/**
 	 * 6. Given a phrase, count the occurrences of each word in that phrase.
@@ -165,11 +286,35 @@ public class EvaluationService {
 	 * @param string
 	 * @return
 	 */
-	public Map<String, Integer> wordCount(String string) {
-		// TODO Write an implementation for this method declaration
-		return null;
-	}
 
+	/* 
+	 * the first thing i have to do here is figure out how to separate the string into words
+	 * then put all the unique words into a map. 
+	 */
+	public Map<String, Integer> wordCount(String string) {
+		String arr[]= string.split("\\W+");
+		Map <String, Integer> map = new HashMap<String, Integer>();
+		int i = 0;
+
+		while (i !=arr.length)
+		{
+			if (map.containsKey(arr[i])==false)
+			{
+				map.put(arr[i],1);
+
+			}
+			else 
+			{
+				int oldval = map.get(arr[i]);
+				int newval = oldval+1;
+				map.put(arr[i],newval);
+
+			}
+			i++;
+		}
+		System.out.println(map);
+		return map;
+	}
 	/**
 	 * 7. Implement a binary search algorithm.
 	 * 
@@ -209,8 +354,8 @@ public class EvaluationService {
 		private List<T> sortedList;
 
 		public int indexOf(T t) {
-			// TODO Write an implementation for this method declaration
-			return 0;
+
+			return sortedList.indexOf(t);
 		}
 
 		public BinarySearch(List<T> sortedList) {
@@ -245,10 +390,55 @@ public class EvaluationService {
 	 * @param string
 	 * @return
 	 */
-	public String toPigLatin(String string) {
-		// TODO Write an implementation for this method declaration
-		return null;
+
+	public String toPigLatin(String string) {		
+		String s = string;
+		String arr[] = s.split(" ");
+		for (int word = 0; word < arr.length; word++) {
+			// the index of the first vowel is stored. 
+			int len = arr[word].length(); 
+			int index = -1; 
+			if ((arr[word].charAt(0)=='q'||arr[word].charAt(0)=='Q')&&arr[word].charAt(1)=='u'||arr[word].charAt(1)=='U') 
+			{
+				arr[word] = arr[word].substring(2) + arr[word].substring(0, 2);
+			}
+			for (int letter = 0; letter < len; letter++) 
+			{ 
+
+				if (isVowel(arr[word].charAt(letter))) 
+				{ 
+					index = letter; 
+					break; 
+				} 
+			} 
+
+			// Pig Latin is possible only if vowels 
+			// is present 
+			if (index == -1) 
+			{
+				return "No vowels or Qs found. Method fails"; 
+			}
+			else {
+				// Take all characters after index (including 
+				// index). Append all characters which are before 
+				// index. Finally append "ay" 
+				arr[word] = arr[word].substring(index) + 
+						arr[word].substring(0, index) + "ay"; 
+			}
+		}
+		StringBuffer sb = new StringBuffer();
+		for (int k = 0; k < arr.length; k++) {
+			sb.append(arr[k]+" ");
+		}
+		s = sb.toString();
+		s = s.trim();
+		return s; 
 	}
+	boolean isVowel(char c) 
+	{ 
+		return (c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U' || 
+				c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u'); 
+	} 
 
 	/**
 	 * 9. An Armstrong number is a number that is the sum of its own digits each
@@ -256,8 +446,9 @@ public class EvaluationService {
 	 * 
 	 * For example:
 	 * 
-	 * 9 is an Armstrong number, because 9 = 9^1 = 9 10 is not an Armstrong number,
-	 * because 10 != 1^2 + 0^2 = 2 153 is an Armstrong number, because: 153 = 1^3 +
+	 * 9 is an Armstrong number, because 9 = 9^1 = 9. 
+	 * 10 is not an Armstrong number, because 10 != 1^2 + 0^2 = 2. 
+	 * 153 is an Armstrong number, because: 153 = 1^3 +
 	 * 5^3 + 3^3 = 1 + 125 + 27 = 153 154 is not an Armstrong number, because: 154
 	 * != 1^3 + 5^3 + 4^3 = 1 + 125 + 64 = 190 Write some code to determine whether
 	 * a number is an Armstrong number.
@@ -266,10 +457,27 @@ public class EvaluationService {
 	 * @return
 	 */
 	public boolean isArmstrongNumber(int input) {
-		// TODO Write an implementation for this method declaration
+		double result = 0;
+		List<Integer> digits = new ArrayList<Integer>();
+		while(input > 0) 
+		{
+			digits.add(input % 10);
+			input /= 10;
+		}
+		int count = 0;
+		while (digits.size()>count)
+		{
+			System.out.println(digits.get(count));
+			System.out.println(digits.size());
+			result = result + Math.pow(digits.get(count), digits.size());
+			System.out.println(result);
+			count++;
+		}
+		if (input == (int)result) {
+			return true;
+		}
 		return false;
 	}
-
 	/**
 	 * 10. Compute the prime factors of a given natural number.
 	 * 
@@ -433,20 +641,40 @@ public class EvaluationService {
 	 * @return
 	 */
 	public boolean isPangram(String string) {
-		// TODO Write an implementation for this method declaration
-		return false;
+		if (string =="")
+		{return false;}
+
+		String spaceless = "";
+		spaceless = string.replaceAll("\\s+", "");
+		System.out.println(spaceless);
+		char[] phrase =  spaceless.toCharArray();
+		System.out.println(phrase);
+		Arrays.sort(phrase);
+		System.out.println(phrase);
+
+		Set<Character> set  = new HashSet<>();
+		StringBuilder sb = new StringBuilder();
+		for (char c : phrase) {
+			if(!set.contains(c)) {
+				set.add(c);
+				sb.append(c);
+			}
+
+		}
+		sb.trimToSize();
+		if (sb.capacity()==(int)26) {return true;} else {return false;}
 	}
 
 	/**
 	 * 17. Calculate the moment when someone has lived for 10^9 seconds.
 	 * 
-	 * A gigasecond is 109 (1,000,000,000) seconds.
+	 * A gigasecond is 10^9 (1,000,000,000) seconds.
 	 * 
 	 * @param given
 	 * @return
 	 */
 	public Temporal getGigasecondDate(Temporal given) {
-		// TODO Write an implementation for this method declaration
+		
 		return null;
 	}
 
